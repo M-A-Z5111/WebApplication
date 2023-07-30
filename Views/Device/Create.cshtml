@@ -1,0 +1,28 @@
+﻿
+@Styles.Render("~/MyDesign/StyleSheetDetails.css")
+@using (Html.BeginForm("Create", "Device", FormMethod.Post))
+{
+
+    <body onload="onload()">
+        <div class="container">
+            <h1>Add New Device</h1>
+            <div class="row">
+                <div class="col-sm-5 col-xs-12">
+                    <form action="javascript:void(0);" autocomplete="off">
+                        <div class="form-group">
+                            <lable for="subject">Device Name</lable>
+                            <input type="text" id="subject" class="form-control" name="DeviceName" placeholder="Enter the Name" required />
+                        </div>
+                        <div class="btn-group me-2 small" role="group" aria-label="First group">
+                            <input type="submit" value="Add" class="btn btn-primary" onclick="generate()" /></div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <hr />
+
+    </body>
+
+
+}

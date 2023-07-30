@@ -1,0 +1,41 @@
+﻿
+@Styles.Render("~/MyDesign/StyleSheetDetails.css")
+@using (Html.BeginForm("Create", "Client", FormMethod.Post))
+{
+
+    <body onload="onload()">
+        <div class="container">
+            <h1>Add New Client</h1>
+            <div class="row">
+                <div class="col-sm-5 col-xs-12">
+                    <form action="javascript:void(0);" autocomplete="off">
+                        <div class="form-group">
+                            <lable for="subject">Client Name</lable>
+                            <input type="text" id="subject" class="form-control" name="ClientName" placeholder="Enter the Name" required />
+                            <lable for="subject">Client Type</lable>
+                            @Html.DropDownList("MyType",
+              EnumHelper.GetSelectList(typeof(WebApplication.Models.Enum.Classification)),
+     new { @class = "form-control" })
+                            <if @WebApplication.Models.Enum.Classification.Person>
+                            <lable for="subject">Client Birthdate</lable>
+                            <input type="text" id="subject" class="form-control" name="Birthdate" placeholder="Enter the Date" required />
+                            </if>
+                            
+                         
+                        </div>
+                        <div class="btn-group me-2 small" role="group" aria-label="First group">
+                            <input type="submit" value="Add" class="btn btn-primary" onclick="generate()" />
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <hr />
+
+    </body>
+
+
+}
+
+

@@ -1,0 +1,32 @@
+﻿@model WebApplication.Models.Device
+
+@Styles.Render("~/MyDesign/StyleSheetDetails.css")
+@using (Html.BeginForm("Edit", "Device", FormMethod.Post))
+{
+    <body onload="onload()">
+        <div class="container">
+            <h1>Edit Device Info</h1>
+            <div class="row">
+                <div class="col-sm-5 col-xs-12">
+                    <form action="javascript:void(0);" autocomplete="off">
+
+                        <div class="form-group">
+                            <lable for="subject">Device Id：</lable>
+                            <input type="text" id="subject" class="form-control" value="@Model.DeviceId" readonly />
+                        </div>
+                        <div class="form-group">
+                            <lable for="event">Device Name：</lable>
+                            <input type="text" id="subject" class="form-control" value="@Model.DeviceName" />
+                        </div>
+                        <div class="btn-group me-2 small" role="group" aria-label="First group">
+                            <input type="submit" value="Save Changes" class="btn btn-primary" onclick="generate()" />
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <hr />
+
+    </body>}
